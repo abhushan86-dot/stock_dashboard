@@ -56,10 +56,14 @@ with tab1:
 
     # Display latest prices
     col1, col2 = st.columns(2)
+    
+    aapl_price = aapl_data['Close'].iloc[-1]
+    googl_price = googl_data['Close'].iloc[-1]
+    
     with col1:
-        st.metric("AAPL Latest Close", f"${float(aapl_data['Close'].iloc[-1]):.2f}")
+        st.metric("AAPL Latest Close", f"${aapl_price:.2f}")
     with col2:
-        st.metric("GOOGL Latest Close", f"${float(googl_data['Close'].iloc[-1]):.2f}")
+        st.metric("GOOGL Latest Close", f"${googl_price:.2f}")
 
 # CRYPTO TRACKER TAB
 with tab2:
